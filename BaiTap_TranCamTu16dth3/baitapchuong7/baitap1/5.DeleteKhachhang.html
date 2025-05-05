@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Times New Roman";
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      label {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      input[type="text"] {
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        width: 200px;
+        margin-bottom: 15px;
+      }
+
+      input[type="submit"] {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 6px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="5.DeleteKhachhang.php" method="post">
+      <label for="">Mã KH:</label>
+      <input type="text" name="makh" placeholder="Nhập mã KH cần xóa" />
+      <input type="submit" name="deletekh" value="Xóa" />
+    </form>
+  </body>
+</html>

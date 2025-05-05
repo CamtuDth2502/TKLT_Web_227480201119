@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.5a </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            color: rgb(6, 92, 92);
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script language="JavaScript">
+        var D = new Date();
+        document.title = "Bây giờ là: " + D.getHours() + " giờ " + D.getMinutes() + " phút";
+        document.write("Bây giờ là: " + D.getHours() + " giờ " + D.getMinutes() + " phút " + D.getSeconds() + " giây.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chu</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: #2c3e50;
+            display: flex;
+        }
+
+        li {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        li a {
+            color: #ecf0f1;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        li a:hover {
+            background-color: #34495e;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            min-width: 200px;
+        }
+
+        li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown a:hover {
+            background-color: #3e5c76;
+        }
+
+        .sub-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #3e5c76;
+            min-width: 180px;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown li:hover .sub-dropdown {
+            display: block;
+        }
+
+        .sub-dropdown a {
+            color: #ecf0f1;
+            padding: 10px 14px;
+            font-size: 15px;
+        }
+
+        .sub-dropdown a:hover {
+            background-color: #4a6f8a;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#trangchu">Trang chủ</a></li>
+        <li><a href="#gioithieu">Giới thiệu</a></li>
+        <li>
+            <a href="#khoahoc">Khóa học</a>
+            <ul class="dropdown">
+                <li>
+                    <a href="#tinhocCB">Tin học căn bản</a>
+                    <ul class="sub-dropdown">
+                        <li><a href="">Microsoft Word 2010</a></li>
+                        <li><a href="">Microsoft Excel 2010</a></li>
+                        <li><a href="">Microsoft PPT 2010</a></li>
+                    </ul>
+                </li>
+                <li><a href="#tinhocPT">Tin học phổ thông</a></li>
+                <li><a href="#LTPascal">Lập trình Pascal</a></li>
+                <li><a href="#LTC">Lập trình C</a></li>
+                <li><a href="#TKWeb">Thiết kế Web</a></li>
+                <li><a href="#VeKT">Vẽ kỹ thuật</a></li>
+            </ul>
+        </li>
+        <li><a href="#baiviet">Bài viết</a></li>
+        <li><a href="#thuthuat">Thủ thuật</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.14a</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            color: rgb(6, 92, 92);
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 130px;
+            height: 30px;
+            font-size: 20px;
+            text-align: right;
+            margin-right: 10px;
+            line-height: 30px;
+        }
+        input[type="text"] {
+            height: 30px;
+            font-size: 20px;
+            padding: 5px;
+            width: 200px;
+            border: 2px solid rgb(6, 92, 92);
+            border-radius: 5px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        input[type="button"] {
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgb(6, 92, 92);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: rgb(5, 75, 75);
+        }
+        br {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hãy nhập hai số</h2>
+    <label>Số hạng 1:</label><input type="text" name="SoHang1" id="SoHang1"><br><br>
+    <label>Số hạng 2:</label><input type="text" name="SoHang2" id="SoHang2"><br><br>
+    <label>Kết quả:</label><input type="text" name="KetQua" id="KetQua" readonly><br><br>
+    <div class="button-group">
+        <input type="button" value="Cộng" 
+               onclick="KetQua.value = parseFloat(SoHang1.value) + parseFloat(SoHang2.value)">
+        <input type="button" value="Trừ" 
+               onclick="KetQua.value = parseFloat(SoHang1.value) - parseFloat(SoHang2.value)">
+        <input type="button" value="Nhân" 
+               onclick="KetQua.value = parseFloat(SoHang1.value) * parseFloat(SoHang2.value)">
+        <input type="button" value="Chia" 
+               onclick="KetQua.value = parseFloat(SoHang1.value) / parseFloat(SoHang2.value)">
+    </div>
+</body>
+</html>

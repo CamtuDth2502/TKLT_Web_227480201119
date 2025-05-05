@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.20c</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px; 
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+div.container {
+    max-width: 450px;
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px; 
+    border: 2px solid darkblue; 
+    font-size: 18px;
+    background-color: deeppink; 
+    border-radius: 12px; 
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500; 
+    margin: 12px 0 5px;
+}
+
+input {
+    width: 100%;
+    height: 38px; /* Taller inputs for better touch targets */
+    font-size: 16px;
+    padding: 8px 12px; /* More padding for comfort */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 6px; /* Rounded corners */
+    transition: border-color 0.3s ease; /* Smooth hover effect */
+}
+button {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+input:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle glow */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent); /* Fading effect */
+    margin: 20px 0; /* More space around divider */
+}
+
+.readonly {
+    background-color: #e9ecef; /* Slightly darker for readonly fields */
+    border: 1px solid #ced4da;
+    color: #495057; /* Darker text for contrast */
+    cursor: not-allowed; /* Indicate non-editable fields */
+}
+
+    </style>
+</head> 
+<body>
+
+    <h1>TÍNH LƯƠNG NHÂN VIÊN</h1>
+
+    <div class="container">
+        <label>Họ tên:</label>
+        <input type="text" id="HoTen"> 
+
+        <label>Năm vào làm:</label>
+        <input type="number" id="NamVaoLam">
+
+        <label>Hệ số lương:</label>
+        <input type="number" id="HeSo">
+
+        <label>Lương cơ sở:</label>
+        <input type="number" id="LuongCoSo">
+
+        <button class="btn" onclick="tinhLuong()">Tính Lương</button>
+
+        <hr>
+
+        <label>Lương cơ bản:</label>
+        <input type="text" id="LuongCoBan" class="readonly" readonly>
+
+        <label>Phụ cấp:</label>
+        <input type="text" id="PhuCap" class="readonly" readonly>
+
+        <label>Thâm niên:</label>
+        <input type="text" id="ThamNien" class="readonly" readonly>
+
+        <label>Thành tiền:</label>
+        <input type="text" id="ThanhTien" class="readonly" readonly>
+    </div>
+
+    <script>
+        function tinhLuong() {
+            var namHienTai = new Date().getFullYear();
+            var heSo = parseFloat(document.getElementById("HeSo").value) || 0;
+            var luongCoSo = parseFloat(document.getElementById("LuongCoSo").value) || 0;
+            var namVaoLam = parseInt(document.getElementById("NamVaoLam").value) || 0;
+
+            var luongCoBan = heSo * luongCoSo;
+            var phuCap = 0.25 * luongCoBan;
+            var thamNien = namHienTai - namVaoLam;
+            var thanhTien = luongCoBan + phuCap;
+
+            document.getElementById("LuongCoBan").value = luongCoBan.toFixed(2);
+            document.getElementById("PhuCap").value = phuCap.toFixed(2);
+            document.getElementById("ThamNien").value = thamNien;
+            document.getElementById("ThanhTien").value = thanhTien.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

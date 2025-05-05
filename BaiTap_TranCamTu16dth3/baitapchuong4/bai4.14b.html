@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.14b</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            color: rgb(6, 92, 92);
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 130px;
+            font-size: 20px;
+            text-align: right;
+            margin-right: 10px;
+            line-height: 30px;
+        }
+        input[type="text"] {
+            height: 30px;
+            font-size: 20px;
+            padding: 5px;
+            width: 200px;
+            border: 2px solid rgb(6, 92, 92);
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgb(6, 92, 92);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="button"]:hover {
+            background-color: rgb(5, 75, 75);
+        }
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 300px;
+            padding: 15px;
+            border: 2px solid rgb(6, 92, 92);
+            border-radius: 5px;
+            background-color: #e0f7fa;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .radio-group label {
+            width: auto;
+            text-align: left;
+            margin-bottom: 10px;
+            line-height: 24px;
+        }
+        br {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1>TÍNH TOÁN SỐ HỌC</h1>");
+
+        function tinhtoan() {
+            var a = parseInt(SoHang1.value);
+            var b = parseInt(SoHang2.value);
+            var ketQua = 0;
+
+            if (document.getElementById("cong").checked) {
+                ketQua = a + b;
+            } else if (document.getElementById("tru").checked) {
+                ketQua = a - b;
+            } else if (document.getElementById("nhan").checked) {
+                ketQua = a * b;
+            } else if (document.getElementById("chia").checked) {
+                if (b !== 0) {
+                    ketQua = a / b;
+                } else {
+                    alert("Không thể chia cho 0!");
+                    return;
+                }
+            }
+
+            KetQua.value = ketQua;
+        }
+    </script>
+    <label>Số hạng 1:</label><input type="text" id="SoHang1"><br><br>
+    <label>Số hạng 2:</label><input type="text" id="SoHang2"><br><br>
+    <label>Kết quả:</label><input type="text" id="KetQua" readonly><br><br>
+    <label>Phép toán:</label><br><br>
+    <div class="radio-group">
+        <label><input type="radio" id="cong" name="pt">Cộng</label>
+        <label><input type="radio" id="tru" name="pt">Trừ</label>
+        <label><input type="radio" id="nhan" name="pt">Nhân</label>
+        <label><input type="radio" id="chia" name="pt">Chia</label>
+    </div>
+    <input type="button" value="Tính" onclick="tinhtoan()">
+</body>
+</html>

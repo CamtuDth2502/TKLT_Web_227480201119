@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Times New Roman";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f2f5;
+      }
+
+      form {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #1877f2;
+        box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      input[type="submit"]:hover {
+        background-color: deeppink;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="3.InsertHoadon.php" method="post">
+      <label for="">Mã HD: </label>
+      <input type="text" name="mahd" placeholder="Nhập mã hóa đơn" />
+
+      <label for="">Mã KH </label>
+      <input type="text" name="makh" placeholder="Nhập mã kh" />
+
+      <label for="">Mã hàng</label>
+      <input type="text" name="mahang" placeholder="Nhập mã hàng" />
+
+      <label for="">Số lượng</label>
+      <input type="text" name="soluong" placeholder="Nhập số lượng" />
+
+      <label for="">Thành tiền</label>
+      <input type="text" name="thanhtien" placeholder="Nhập thành tiền" />
+
+      <input type="submit" name="inserthd" value="Thêm" />
+    </form>
+  </body>
+</html>
