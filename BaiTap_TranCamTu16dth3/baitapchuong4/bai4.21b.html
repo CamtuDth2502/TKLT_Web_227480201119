@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.21b</title>
+</head>
+<body>
+    <input type="text" id="so01" placeholder="số 1">
+    <input type="text" id="so02" placeholder="số 2">
+    <input type="text" id="ketQua"  readonly>
+
+    <input type="radio" id="cong">
+    <label for="">Cộng</label>
+    <input type="radio" id="tru">
+    <label for="">Trừ</label>
+    <input type="radio" id="nhan">
+    <label for="">Nhân</label>
+    <input type="radio" id="chia">
+    <label for="">Chia</label>
+    <button onclick="tinhToan()">Tính</button>
+
+    <script>
+
+        function tinhToan() {
+            const so1 = parseFloat(document.getElementById('so01').value);
+            const so2 = parseFloat(document.getElementById('so02').value);
+
+            const KetQua = document.getElementById('ketQua');
+
+            if (isNaN(so1) || isNaN(so2)) {
+                alert('Vui lòng nhập số hợp lệ!');
+                KetQua.value = "";
+                return;
+            } 
+            
+            if (document.getElementById("cong").checked) {
+                KetQua.value = so1 + so2;
+            }
+
+            else if (document.getElementById("tru").checked) {
+                KetQua.value = so1 - so2;
+            }
+
+            else if (document.getElementById("nhan").checked) {
+                KetQua.value = so1 * so2;
+            }
+
+            else if (document.getElementById("chia").checked) {
+                if (so2 == 0) {
+                    alert('Ko chia đc 0!');
+                } else {
+                    KetQua.value = so1 / so2;
+                }
+            }
+
+            else {
+                alert('Vui lòng chọn phép tính!');
+            }
+
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+                radio.disabled = false; 
+                radio.checked = false;
+            });
+        }
+    </script>
+</body>
+</html>

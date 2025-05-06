@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="hoten" placeholder="họ tên">
+    <input type="text" id="namsinh" placeholder="năm sinh">
+    <button onclick="hienThi()">Hiển thị</button>
+    <p id="hienThi"></p>
+    <script>
+        function hienThi() {
+            const hoten = document.getElementById('hoten').value;
+            const namsinh = document.getElementById('namsinh').value;
+
+            const hienThi = document.getElementById('hienThi');
+            hienThi.innerHTML = `Họ tên: ${hoten} <br>Năm sinh: ${namsinh}`;
+        }
+    </script>
+
+</body>
+</html>

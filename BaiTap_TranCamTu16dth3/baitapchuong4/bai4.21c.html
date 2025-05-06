@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.21c</title>
+</head>
+<body>
+    <input type="text" id="so01" placeholder="số 1">
+    <input type="text" id="so02" placeholder="số 2">
+    <input type="text" id="ketQua"  readonly>
+
+    <select name="" id="phepTinh">
+        <option value="">--Chọn phép tính--</option>
+        <option value="cong">Cộng</option>
+        <option value="tru">Trừ</option>
+        <option value="nhan">Nhân</option>
+        <option value="chia">Chia</option>
+    </select>
+
+    <button onclick="tinhToan()">Tính</button>
+
+    <script>
+
+        function tinhToan() {
+            const so1 = parseFloat(document.getElementById('so01').value);
+            const so2 = parseFloat(document.getElementById('so02').value);
+            const phepTinh = document.getElementById('phepTinh').value;
+            const KetQua = document.getElementById('ketQua');
+
+            if (isNaN(so1) || isNaN(so2)) {
+                alert('Vui lòng nhập số hợp lệ!');
+                KetQua.value = "";
+                return;
+            } 
+
+            if (!phepTinh) {
+                alert("Vui lòng chọn phép tính!");
+                KetQua.value = "";
+                return;
+            }
+            
+            switch(phepTinh) {
+                    case 'cong':
+                        KetQua.value = so1 + so2;
+                        break;
+                    case 'tru':
+                        KetQua.value = so1 - so2;
+                        break;
+                    case 'nhan': 
+                        KetQua.value = so1 * so2;
+                        break;
+                    case 'chia':
+                        if (so2 == 0) {
+                            alert('không thể chia 0');
+                            KetQua.value = "";
+                            return;
+                        } else {
+                            KetQua.value = so1 / so2;
+                        }
+                        break;
+                    default:
+                        alert('Phép toán ko hợp lệ!');
+                        KetQua.value = "";
+                }
+        }
+    </script>
+</body>
+</html>
